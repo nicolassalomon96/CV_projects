@@ -1,5 +1,4 @@
 #Convert annotation format into YOLOv8 format
-
 import os
 import sys
 import imageio.v2 as io

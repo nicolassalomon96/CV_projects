@@ -1,4 +1,4 @@
 # Ignore dataset folder
 /dataset
 /runs
-yolov8n.pt
+/models
