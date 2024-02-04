@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import imageio.v2 as io
 import cv2
+import sys
 
 #classes = ['ignore', 'pedestrian', 'people', 'bicycle', 'car', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor', 'others']
 classes = ['pedestrian', 'people', 'bicycle', 'car', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor']
@@ -52,7 +53,54 @@ def display_image_w_annotations_YOLO(image, annotation_list, max_annot=1000):
         
     display_image(image_cp)
 
-def predict(model, image, mode='detection', plot=False, conf_thresh=0.5, objects=None):
+#Image resize mantaining de aspect ratio
+def image_resize(image, width = None, height = None, inter = cv2.INTER_AREA):
+    # initialize the dimensions of the image to be resized and
+    # grab the image size
+    dim = None
+    (h, w) = image.shape[:2]
+
+    # if both the width and height are None, then return the
+    # original image
+    if width is None and height is None:
+        return image
+
+    # check to see if the width is None
+    if width is None:
+        # calculate the ratio of the height and construct the
+        # dimensions
+        r = height / float(h)
+        dim = (int(w * r), height)
+
+    # otherwise, the height is None
+    else:
+        # calculate the ratio of the width and construct the
+        # dimensions
+        r = width / float(w)
+        dim = (width, int(h * r))
+
+    # resize the image
+    resized = cv2.resize(image, dim, interpolation = inter)
+
+    # return the resized image
+    return resized
+
+def draw_boxes(image, result_boxes):
+    colors = {'pedestrian':(0,255,0), 'people':(0,255,0), 'bicycle':(0,0,255), 'car':(255,0,0), 'van':(255,255,0), 'truck':(255,0,255),
+              'tricycle':(0,0,255), 'awning-tricycle':(0,0,255), 'bus':(255,255,0), 'motor':(0,0,255)}
+    image_cp = np.copy(image)
+    
+    if len(result_boxes) > 0:
+        for box in result_boxes:
+            box_xyxy = box.xyxy[0].detach().cpu().numpy().astype(int)
+            output = cv2.rectangle(image_cp,(box_xyxy[0],box_xyxy[1]),(box_xyxy[2],box_xyxy[3]),colors[list(colors.keys())[int(box.cls.item())]], 2)
+            output = cv2.putText(output, list(colors.keys())[int(box.cls.item())], (box_xyxy[0],box_xyxy[1] - 10), cv2.FONT_HERSHEY_SIMPLEX,  1, colors[list(colors.keys())[int(box.cls.item())]], 2)
+    else:
+        print("NO DETECTONS FOUND")
+        output = []
+    return output
+
+def predict(model, image, mode='detection', plot=False, conf_thresh=0.5, objects=None, imgsz=704):
     #conf_thresh = confidence threshold for object detection
     #objects = LIST of objects to detect
 
@@ -64,7 +112,7 @@ def predict(model, image, mode='detection', plot=False, conf_thresh=0.5, objects
         elif objects == ['all']:
             number_class_list = list(range(len(classes)))
     
-    results = model.predict(image, verbose=False, conf=conf_thresh, classes=number_class_list)
+    results = model.predict(image, verbose=False, conf=conf_thresh, classes=number_class_list, imgsz=imgsz)
     result_boxes = []
     result_masks = []
     result_probs = []
