@@ -86,8 +86,8 @@ def image_resize(image, width = None, height = None, inter = cv2.INTER_AREA):
     return resized
 
 def draw_boxes(image, result_boxes):
-    colors = {'pedestrian':(0,255,0), 'people':(0,255,0), 'bicycle':(0,0,255), 'car':(255,0,0), 'van':(255,255,0), 'truck':(255,0,255),
-              'tricycle':(0,0,255), 'awning-tricycle':(0,0,255), 'bus':(255,255,0), 'motor':(0,0,255)}
+    colors = {'pedestrian':(0,255,0), 'people':(0,255,0), 'bicycle':(255,0,0), 'car':(0,0,255), 'van':(0,255,255), 'truck':(255,0,255),
+              'tricycle':(255,0,0), 'awning-tricycle':(255,0,0), 'bus':(0,255,255), 'motor':(255,0,0)} #BGR format
     image_cp = np.copy(image)
     
     if len(result_boxes) > 0:
