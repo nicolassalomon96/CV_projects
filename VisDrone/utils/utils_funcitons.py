@@ -159,3 +159,27 @@ def predict(model, image, mode='detection', plot=False, conf_thresh=0.5, objects
         
         else:
             print('Wrong mode selected')
+        
+
+def track_objects(model, image, plot=False, conf_thresh=0.3, iou=0.5, objects=None, imgsz=704):
+    number_class_list = []
+    if objects!=None:
+        if objects!=['all']:
+            for object in objects: 
+                number_class_list.append(classes.index(object))
+        elif objects == ['all']:
+            number_class_list = list(range(len(classes)))
+    
+    results = model.track(image, persist=True, verbose=False, conf=conf_thresh, iou=iou, classes=number_class_list, imgsz=imgsz, tracker="bytetrack.yaml")
+    result_boxes = []
+    results_images = []
+
+    for result in results:
+        if plot:
+            image_bgr = result.plot()
+            results_images.append(image_bgr) #Image RGB
+            result_boxes.append(result.boxes)
+            return result_boxes, results_images
+        else:
+            result_boxes.append(result.boxes)
+            return result_boxes
