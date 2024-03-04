@@ -161,7 +161,7 @@ def predict(model, image, mode='detection', plot=False, conf_thresh=0.5, objects
             print('Wrong mode selected')
         
 
-def track_objects(model, image, plot=False, conf_thresh=0.3, iou=0.5, objects=None, imgsz=704):
+def track_objects(model, image, plot=False, conf_thresh=0.3, iou=0.5, objects=None, imgsz=704, tracker="botsort.yaml"):
     number_class_list = []
     if objects!=None:
         if objects!=['all']:
@@ -170,7 +170,7 @@ def track_objects(model, image, plot=False, conf_thresh=0.3, iou=0.5, objects=No
         elif objects == ['all']:
             number_class_list = list(range(len(classes)))
     
-    results = model.track(image, persist=True, verbose=False, conf=conf_thresh, iou=iou, classes=number_class_list, imgsz=imgsz, tracker="bytetrack.yaml")
+    results = model.track(image, persist=True, verbose=False, conf=conf_thresh, iou=iou, classes=number_class_list, imgsz=imgsz, tracker=tracker)
     result_boxes = []
     results_images = []
 
