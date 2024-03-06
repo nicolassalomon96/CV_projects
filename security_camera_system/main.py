@@ -82,7 +82,7 @@ class Security_system():
 
 if __name__ == "__main__":
 
-    model_path = 'yolov8m.pt'
+    model_path = r'models/yolov8m.pt'
     system = Security_system(model_path)
     
     #Video Configuration
