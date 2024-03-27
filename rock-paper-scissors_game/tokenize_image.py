@@ -26,7 +26,7 @@ class Tokenize_img():
     }
 
     def __init__(self, cuda=False, model='resnet-18', layer='default', layer_output_size=512):
-        """ Img2Vec
+        """ 
         :param cuda: If set to True, will run forward pass on GPU
         :param model: String name of requested model
         :param layer: String or Int depending on model.  See more docs: https://github.com/christiansafka/img2vec.git
