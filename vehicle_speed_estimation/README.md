@@ -2,10 +2,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Fso%2Fspeed-logo&psig=AOvVaw05wugwFwHL7gSBcAE4pU21&ust=1718312510222000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCOjc-o371oYDFQAAAAAdAAAAABAE" alt="Logo" width="80" height="80">
+    <img src="images/speed_logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Vehicle speed estimation through Computer Vision</h3>
+<h3 align="center">Vehicle Speed Estimation through Computer Vision</h3>
 
   <p align="center">
     project_description
