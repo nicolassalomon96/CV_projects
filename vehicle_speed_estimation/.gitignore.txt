@@ -1,2 +1,2 @@
-/videos/
-/models/
+/videos
+/models
