@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+![Product Name Screen Shot][product-screenshot]]
 
 This project leverages computer vision technology to measure vehicle speeds on highways, providing accurate and real-time data. By utilizing high-resolution cameras and advanced image processing algorithms, the system can detect, track, and calculate vehicle speeds autonomously. This enhances road safety by enabling quick responses to incidents and integrates seamlessly with smart traffic infrastructures, offering a cost-effective and efficient solution for traffic monitoring and management.
 
