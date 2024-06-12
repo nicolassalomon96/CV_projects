@@ -1,2 +1,0 @@
-vehicle_speed_estimation\videos\
-vehicle_speed_estimation\models\
