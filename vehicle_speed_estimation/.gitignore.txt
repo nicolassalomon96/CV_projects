@@ -1,2 +1,2 @@
-/road.mp4
-/models/*
+road.mp4
+/models
