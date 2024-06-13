@@ -10,10 +10,10 @@
   <p align="center">
     An awesome vehicle speed estimation using a highway camera and Ultralytics-YOLOv8 combined with image processing techniques
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/images/output_gif.gif"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/vehicle_speed_estimation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation">View Demo</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/vehicle_speed_estimation/images/output_gif.gif">View Demo</a>
     ·
     <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -109,9 +109,23 @@ The following packages may be installed in order to run the code:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This project is based on the next workflow:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. Read the video through OpenCV VideoCapture.
+
+2. Define an especific area where you want to track and measure vehicle speed (defined by the red polygon in the original image below). Here I searched for the lenght of the white line across the road (about 3m and 6m among they) in Praga, where the video comes from. This is made in order to have the relation between pixels in the video and real distances.
+
+```sh
+  vertexes = np.array([[587, 391], [818, 391], [1395, 719], [-50, 719]])
+```
+
+3. Convert the actual view into Bird Eye's View (BEV) in order to overcome the perpective camera distortion and measure real distances using OpenCv _getPerspectiveTransform()_ and _perspectiveTransform()_ methods. Here is an example of BEV:
+<div align="center">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/images/BEV_vs_Original.png">
+    <img src="images/BEV_vs_Original.png" width="1280" height="720">
+  </a>
+</div>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
