@@ -10,7 +10,7 @@
   <p align="center">
     An awesome vehicle speed estimation using a highway camera and Ultralytics-YOLOv8 combined with image processing techniques
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/images/output_gif.gif"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation">View Demo</a>
@@ -165,7 +165,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Nicolás Salomón - [Linkedin](https://www.linkedin.com/in/nicolassalomon96/) - [Gmail](nicolassalomon96@gmail.com)
 
-Project Link: [Repository](https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation)
+Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation](https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -173,18 +173,6 @@ Project Link: [Repository](https://github.com/nicolassalomon96/CV_projects/tree/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
