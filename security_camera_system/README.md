@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation">
+  <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system">
     <img src="images/camara_logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -10,14 +10,14 @@
   <p align="center">
     A surveillance camera system that detects people and send an email to advise you.
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/vehicle_speed_estimation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/vehicle_speed_estimation/images/output_2_gif.gif">View Demo</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system/images/output_2_gif.gif">View Demo</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -106,7 +106,7 @@ The following packages may be installed in order to run the code:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation
+   git clone https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system
    ```
 2. Install required packages listed on Prerequisites
 
@@ -187,7 +187,7 @@ Any comment or contribution is welcome and I will be attentive to respond to you
 
 Nicolás Salomón - [Linkedin](https://www.linkedin.com/in/nicolassalomon96/) - [Gmail](nicolassalomon96@gmail.com)
 
-Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation](https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation)
+Project Link: [https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system](https://github.com/nicolassalomon96/CV_projects/blob/main/security_camera_system)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
