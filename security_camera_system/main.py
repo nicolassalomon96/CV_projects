@@ -1,3 +1,4 @@
+import os
 import cv2
 import torch
 import keyboard
@@ -82,18 +83,25 @@ class Security_system():
 
 if __name__ == "__main__":
 
+    if not os.path.exists(r'.\models'):
+        os.makedirs(r'.\models')
+
+    if not os.path.exists(r'.\outputs'):
+        os.makedirs(r'.\models')
+
     model_path = r'models/yolov8m.pt'
     system = Security_system(model_path)
     
     #Video Configuration
-    cap = cv2.VideoCapture(0) # or "path/to/video/file.mp4"
+    #cap = cv2.VideoCapture(0) # or "path/to/video/file.mp4"
+    cap = cv2.VideoCapture(r'.\videos\video_2.mp4')
     video_size = (1280, 720)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, video_size[0])
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, video_size[1])
     # Codec and VideoWriter
     codec = cv2.VideoWriter_fourcc(*'MP4V')
     fps = cap.get(cv2.CAP_PROP_FPS) #10
-    video_writer = cv2.VideoWriter(r'.\outputs\camera_system.mp4', codec, fps, video_size)
+    video_writer = cv2.VideoWriter(r'.\outputs\camera_system_2.mp4', codec, fps, video_size)
 
     def check_key_pressed(key):
         return keyboard.is_pressed(key)
