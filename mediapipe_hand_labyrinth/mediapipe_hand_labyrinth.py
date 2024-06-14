@@ -5,6 +5,11 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 1280) #3 -> Width of the frames in the video stream
 cap.set(4, 720)
 
+# Codec and VideoWriter
+codec = cv2.VideoWriter_fourcc(*'MP4V')
+fps = cap.get(cv2.CAP_PROP_FPS) #10
+video_writer = cv2.VideoWriter(r'.\outputs\output_fail.mp4', codec, fps, (1280,720))
+
 detector = LandmarkDetector()
 
 #labyrinth_png = cv2.imread(r'D:\Nicolas\Proyectos-IA\Opencv_Mediapipe\images\simple_labyrinth_v2.png', cv2.IMREAD_UNCHANGED)
@@ -88,8 +93,10 @@ while cap.isOpened():
     cv2.putText(image, 'START', (210,90), cv2.FONT_HERSHEY_PLAIN, 1, (255,0,0), 2)
     cv2.putText(image, 'FINISH', (1025,570), cv2.FONT_HERSHEY_PLAIN, 1, (255,0,0), 2)  
     cv2.imshow('Landmark Detector', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    video_writer.write(cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
     if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 
 cap.release()
+video_writer.release()
 cv2.destroyAllWindows()
