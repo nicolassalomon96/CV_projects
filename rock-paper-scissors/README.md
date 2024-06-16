@@ -13,7 +13,7 @@
     <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors/images/output_gif.gif">View Demo</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors/outputs/output_gif.gif">View Demo</a>
     ·
     <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
