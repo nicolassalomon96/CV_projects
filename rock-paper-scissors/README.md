@@ -1,23 +1,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth">
-    <img src="images/game_logo.png" alt="Logo" width="240" height="120">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors">
+    <img src="images/logo.png" alt="Logo" width="240" height="200">
   </a>
 
-<h3 align="center">An AI hand-controlled labyrinth game</h3>
+<h3 align="center">Rock, paper and scissor detection</h3>
 
   <p align="center">
-    A game that uses your hand to control your movements in order to pass a labyrinth.
+    A rock, paper and scissor detection using a webcam and Support Vector Machine (SVM) algorithm.
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth/outputs/output_score_gif.gif">View Demo</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors/images/output_gif.gif">View Demo</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -51,7 +51,9 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-I present you an innovative game that uses computer vision technology to recognize the player's hand through a webcam. This advanced system allows you to control a virtual joystick to navigate a maze on the screen, offering an intuitive and accessible gaming experience. By employing AI techniques such as hand detection and tracking, image segmentation, and gesture recognition, this game redefines interaction in the gaming world, providing total immersion and a unique way to play. Discover the future of video games with this revolutionary application and enjoy your time playing!
+In the realm of artificial intelligence and computer vision, hand gesture recognition represents a fascinating and practical challenge. This project focuses on detecting hand positions corresponding to the popular game "Rock, Paper, Scissors." This game, known for its simplicity and universal nature, serves as an excellent application to demonstrate the capabilities of computer vision and machine learning technologies.
+
+The primary goal of this project is to develop a system that can identify and classify hand positions in real-time as rock, paper, or scissors using advanced image processing and artificial intelligence techniques.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,8 +62,11 @@ I present you an innovative game that uses computer vision technology to recogni
 
 * [![Python][Python]][Python-url]
 * [![NumPy][NumPy]][NumPy-url]
+* [![Pandas][Pandas]][Pandas-url]
 * [![Pytorch][Pytorch]][Pytorch-url]
-* [![MediaPipe][MediaPipe]][MediaPipe-url]
+* [![Scikit-learn][Scikit-learn]][Scikit-learn-url]
+* [![OpenCV][OpenCV]][OpenCV-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,28 +81,19 @@ To get a local copy up and running follow these simple example steps.
 
 The following packages may be installed in order to run the code:
 
-* Numpy
+* Packages:
   ```sh
-  pip install numpy
+  pip install numpy opencv-python matplotlib pillow pandas scikit-learn
   ```
-* OpenCV
   ```sh
-  pip install opencv-python
-  ```
-* Mediapipe
-  ```sh
-  pip install mediapipe
-  ```
-* Matplotlib
-  ```sh
-  pip install matplotlib
+  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 #for examples see https://pytorch.org/get-started/locally/
   ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth
+   git clone https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors
    ```
 2. Install required packages listed on Prerequisites
 
@@ -107,30 +103,26 @@ The following packages may be installed in order to run the code:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-If you want to play, just run _mediapipe_hand_labyrinth.py_
-```sh
-python mediapipe_hand_labyrinth.py
-```
-Once you pass your finger through the **START**, the score will begin to run. Avoid touching borders of the labyrinth because you'll loose. Good Luck! 
+**Run main_SVM.ipynb notebook**
 
-This project is based on Google Mediapile Framework, through it we can get our finger position. A more detailed description is given below:
+The implementation of this project includes the following key stages:
 
-* After initializing the webcam video capture, the hand keypoint detector is instantiated. It will be responsible of detecting your finger using the Mediapipe Framework 
-```sh
-detector = LandmarkDetector()
-```
+  * Data Collection: Gathering images of hands in different positions (rock, paper, and scissors) to generate a dataset for training a classification model, dividing it into training, validation, and test sets.
+  * Image Processing: Implementing a feature extractor for each image using a ResNet-18 neural network to generate representative "tokens" for subsequent training of a classification model.
+  * Model Training: Designing and training a classification network based on Support Vector Machines (SVM).
+  * Evaluation and Validation: Measuring the model's performance using different metrics: accuracy, precision, recall, and F1-score. The current model achieved an accuracy of 99% on the test dataset.
+  * Real-Time Implementation: Integrating the trained model into an application that can process video sequences in real-time and provide instant results.
 
-* A PNG image of the labyrinth is loaded and resized. Variables are initialized to track the state of the game, the position of the fingertip, a mask for drawing the path of the finger, and the start and current times.
+This project not only demonstrates the technical ability to solve complex problems using computer vision but also offers an interactive and engaging application that can be used in various educational and recreational contexts.
 
-* Once the labyrinth and the masks necessary to detect a crossing along the border lines are loaded, the key points of the left hand are detected in the image.
-```sh
-left_det, left_detections_list = detector.get_positions(image, kind='left_hand', draw=False) #for detect left hand fingertip
-```
 
-* It is checked if the tip of the finger has passed the start line. If so, the start is marked, the path of the finger is drawn and the time is recorded. If the tip of the finger has passed the finish line, the end is marked and the time is shown.
+<div align="center">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors">
+    <img src="images/output_image.png" alt="Logo" width="1280" height="640">
+  </a>
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
@@ -182,7 +174,7 @@ Any comment or contribution is welcome and I will be attentive to respond to you
 
 Nicolás Salomón - [Linkedin](https://www.linkedin.com/in/nicolassalomon96/) - [Gmail](nicolassalomon96@gmail.com)
 
-Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth](https://github.com/nicolassalomon96/CV_projects/tree/main/mediapipe_hand_labyrinth)
+Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors](https://github.com/nicolassalomon96/CV_projects/tree/main/rock-paper-scissors)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -190,16 +182,16 @@ Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/mediapi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: images/output_example.png
+[product-screenshot]: images/output_image_2.png
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
 [OpenCV]: https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white
 [OpenCV-url]: https://opencv.org/
-[Pytorch]: https://img.shields.io/badge/PyTorch-black?logo=PyTorch
-[Pytorch-url]: https://pytorch.org/
-[Ultralytics]: https://img.shields.io/badge/ultralytics-v8.1.0-blue
-[Ultralytics-url]: https://docs.ultralytics.com/
 [NumPy]: https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white
 [NumPy-url]: https://opencv.org/
-[MediaPipe]: images/mediapipe_logo.png
-[MediaPipe-url]: https://mediapipe-studio.webapps.google.com/home
+[Pandas]: https://img.shields.io/badge/-pandas-05122A?style=flat&logo=pandas
+[Pandas-url]: https://pandas.pydata.org/
+[Scikit-learn]: https://img.shields.io/badge/scikit-learn-whitesmoke?style=for-the-badge&logo=scikit-learn
+[Scikit-learn-url]: https://scikit-learn.org/
+[Pytorch]: https://img.shields.io/badge/PyTorch-black?logo=PyTorch
+[Pytorch-url]: https://pytorch.org/
