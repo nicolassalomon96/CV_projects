@@ -80,7 +80,7 @@ To get a local copy up and running follow these simple example steps.
 The following packages may be installed in order to run the code:
 * Numpy, OpenCV, Matplotlib, Imageio
   ```sh
-  pip install numpy, opencv-python, matplotlib, imageio
+  pip install numpy opencv-python matplotlib imageio
   ```
 
 ### Installation
