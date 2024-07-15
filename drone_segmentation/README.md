@@ -1,23 +1,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation">
-    <img src="images/project_logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation">
+    <img src="images/logo.png" alt="Logo" width="100" height="100">
   </a>
 
-<h3 align="center">Vehicle Speed Estimation through Computer Vision</h3>
+<h3 align="center">Aereal Drone Image Segmentation through U-net architecture</h3>
 
   <p align="center">
-    An awesome vehicle speed estimation using a highway camera and Ultralytics-YOLOv8 combined with image processing techniques
+    Drone Image Segmentation using a custom U-net architecture and a pretrained model that levarage fine-tuning models advantages.
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/vehicle_speed_estimation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/blob/main/vehicle_speed_estimation/images/output_gif.gif">View Demo</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation/images/output_test.png">View Demo</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -51,7 +51,27 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-This project leverages computer vision technology to measure vehicle speeds on highways, providing accurate and real-time data. By utilizing high-resolution cameras and advanced image processing algorithms, the system can detect, track, and calculate vehicle speeds autonomously. This enhances road safety by enabling quick responses to incidents and integrates seamlessly with smart traffic infrastructures, offering a cost-effective and efficient solution for traffic monitoring and management.
+* Project Summary and Importance
+
+This project focuses on the segmentation of aerial images captured by drones using the Unet architecture, a convolutional neural network designed for image segmentation tasks. Two different approaches were implemented and compared: one using a Unet architecture trained from scratch and the other using a pre-trained Unet architecture.
+
+Accurate segmentation of drone images has a wide range of applications in various fields, including precision agriculture, environmental monitoring, disaster management, and urban planning. In this project, we specifically focused on the segmentation of 23 different zones or objects, as well as determining suitable and unsuitable zones for drone landing. The ability to identify these zones with high precision is crucial for ensuring the safety and efficiency of drone operations.
+
+* Architecture and Methods
+
+Unet Trained from Scratch: A Unet architecture was developed from the ground up, training it with a specific dataset for the segmentation task. This approach allowed the network to be tailored specifically to the characteristics of the dataset.
+
+Pre-trained Unet: A pre-trained Unet architecture on large generic datasets was used, which was then fine-tuned with the specific dataset for drone landing zone segmentation. This approach leveraged the already learned features of the network, reducing training time and improving the accuracy of the results.
+
+* Results and Conclusions
+
+The results showed that the pre-trained Unet significantly outperformed the Unet trained from scratch in terms of accuracy and convergence time. Transfer learning allowed the pre-trained network to capture relevant features more efficiently, resulting in more precise segmentation.
+
+* Future Applications
+
+The techniques developed in this project have great potential to be applied in various areas. In agriculture, they can help identify specific crop areas that require attention. In environmental monitoring, they can be used to track landscape changes or detect areas affected by natural disasters. Additionally, in disaster management, they can help plan safer and more effective rescue operations.
+
+In summary, this project demonstrates the value of using advanced neural network architectures, such as Unet, in drone image segmentation, highlighting especially the benefits of using pre-trained networks to improve results and process efficiency.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -61,7 +81,7 @@ This project leverages computer vision technology to measure vehicle speeds on h
 * [![Python][Python]][Python-url]
 * [![OpenCV][OpenCV]][OpenCV-url]
 * [![NumPy][NumPy]][NumPy-url]
-* [![Ultralytics][Ultralytics]][Ultralytics-url]
+* [![Pytorch][Pytorch]][Pytorch-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,28 +96,18 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 The following packages may be installed in order to run the code:
-* Numpy
+* Numpy, SMP (segmentation_models_pytorch), Opencv, Pillow, Matplotlib.
   ```sh
-  pip install numpy
-  ```
-* OpenCV
-  ```sh
-  pip install opencv-python
-  ```
-* Ultralytics (for YOLOv8)
-  ```sh
-  pip install ultralytics
+  pip install numpy segmentation-models-pytorch opencv-python pillow matplotlib
   ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation
+   git clone https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation
    ```
 2. Install required packages listed on Prerequisites
-
-3. Run main.ipynb using your preferred IDE
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,23 +115,33 @@ The following packages may be installed in order to run the code:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This project is based on the next workflow:
+This project has three different Notebooks according to the trained net. All of these nets were trained using Aerial Semantic Segmentation Drone Dataset (https://www.kaggle.com/datasets/bulentsiyah/semantic-drone-dataset). This dataset is composed of 400 aerial images captured by drones, segmented into 23 different classes according to the following image:
 
-1. Read the video through OpenCV VideoCapture.
-
-2. Define an especific area where you want to track and measure vehicle speed (defined by the red polygon in the original image below). Here I searched for the lenght of the white line across the road (about 3m and 6m among they) in Praga, where the video comes from. This is made in order to have the relation between pixels in the video and real distances.
-
-```sh
-  vertexes = np.array([[587, 391], [818, 391], [1395, 719], [-50, 719]])
-```
-
-3. Convert the actual view into Bird Eye's View (BEV) in order to overcome the perpective camera distortion and measure real distances using OpenCv _getPerspectiveTransform()_ and _perspectiveTransform()_ methods. Here is an example of BEV:
 <div align="center">
-  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation/images/BEV_vs_Original.png">
-    <img src="images/BEV_vs_Original.png" width="1280" height="720">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation/images/classes.png">
+    <img src="images/classes.png" alt="Logo" width="450" height="350">
   </a>
 </div>
 
+1. drone_seg.ipynb shows you the preprocess, training and results of a custom U-net architecture. The trained network shows an IoU = 0.0982 and an Accuracy = 0.5797 on the Validation Dataset. This result is not bad but it could be improved.
+
+2. Looking for better results a pretrained model was used in order to be trained with our custom dataset. Results are shown in drone_seg_smp.ipynb Notebook, where the python package SMP (segmentation-models-pytorch) was used to define the pretrained U-net architecture. The trained network shows an IoU = 0.2405 and an Accuracy = 0.9859 on the Validation Dataset. This result greatly improves performance compared to the network trained from 0, demonstrating the great advantage of using fine-tuning in the training of neural networks.
+
+3. Additionally, a model was trained that groups the 23 classes into 5 different classes for segmentation, according to the image bellow.
+
+<div align="center">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation/images/classes_5.png">
+    <img src="images/classes_5.png" alt="Logo" width="450" height="200">
+  </a>
+</div>
+
+3. Finally, a model for only detecting landable areas was trained using the same dataset. Training results are available on drone_seg_smp_landable.ipynb Notebook.
+
+<div align="center">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation/images/landable_zones.png">
+    <img src="images/landable_zones.png" alt="Logo" width="1280" height="720">
+  </a>
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -176,7 +196,7 @@ Any comment or contribution is welcome and I will be attentive to respond to you
 
 Nicolás Salomón - [Linkedin](https://www.linkedin.com/in/nicolassalomon96/) - [Gmail](nicolassalomon96@gmail.com)
 
-Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation](https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle_speed_estimation)
+Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation](https://github.com/nicolassalomon96/CV_projects/tree/main/drone_segmentation)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,12 +204,12 @@ Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/output_test_1.png
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
 [OpenCV]: https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white
 [OpenCV-url]: https://opencv.org/
 [NumPy]: https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white
-[NumPy-url]: https://opencv.org/
-[Ultralytics]: https://img.shields.io/badge/ultralytics-v8.1.0-blue
-[Ultralytics-url]: https://docs.ultralytics.com/
+[NumPy-url]: https://numpy.org/
+[Pytorch]: https://img.shields.io/badge/PyTorch-black?logo=PyTorch
+[Pytorch-url]: https://pytorch.org/
