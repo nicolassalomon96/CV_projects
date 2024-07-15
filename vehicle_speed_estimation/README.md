@@ -190,6 +190,6 @@ Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/vehicle
 [OpenCV]: https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white
 [OpenCV-url]: https://opencv.org/
 [NumPy]: https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white
-[NumPy-url]: https://opencv.org/
+[NumPy-url]: https://numpy.org/
 [Ultralytics]: https://img.shields.io/badge/ultralytics-v8.1.0-blue
 [Ultralytics-url]: https://docs.ultralytics.com/

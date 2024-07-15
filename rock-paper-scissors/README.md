@@ -188,7 +188,7 @@ Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/rock-pa
 [OpenCV]: https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white
 [OpenCV-url]: https://opencv.org/
 [NumPy]: https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white
-[NumPy-url]: https://opencv.org/
+[NumPy-url]: https://numpy.org/
 [Pandas]: https://img.shields.io/badge/-pandas-05122A?style=flat&logo=pandas
 [Pandas-url]: https://pandas.pydata.org/
 [Scikit-learn]: https://img.shields.io/badge/scikit-learn-whitesmoke?style=for-the-badge&logo=scikit-learn

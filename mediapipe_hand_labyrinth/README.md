@@ -200,6 +200,6 @@ Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/mediapi
 [Ultralytics]: https://img.shields.io/badge/ultralytics-v8.1.0-blue
 [Ultralytics-url]: https://docs.ultralytics.com/
 [NumPy]: https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white
-[NumPy-url]: https://opencv.org/
+[NumPy-url]: https://numpy.org/
 [MediaPipe]: images/mediapipe_logo.png
 [MediaPipe-url]: https://mediapipe-studio.webapps.google.com/home

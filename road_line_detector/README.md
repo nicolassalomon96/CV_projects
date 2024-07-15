@@ -195,4 +195,4 @@ Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/road_li
 [OpenCV]: https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white
 [OpenCV-url]: https://opencv.org/
 [NumPy]: https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white
-[NumPy-url]: https://opencv.org/
+[NumPy-url]: https://numpy.org/
