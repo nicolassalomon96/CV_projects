@@ -17,6 +17,18 @@ faces_folder = r'.\Database\Faces'
 images_folder = r'.\Images'
 reg_folder = r'.\Database\Registrations'
 
+if not os.path.exists(r'.\Database'):
+    os.mkdir(r'.\Database')
+
+if not os.path.exists(users_folder):
+    os.mkdir(users_folder)
+
+if not os.path.exists(faces_folder):
+    os.mkdir(faces_folder)
+
+if not os.path.exists(reg_folder):
+    os.mkdir(reg_folder)
+
 ############################################# VARIABLES #########################################################
 show_det = False #Show face mesh image
 blink = False
