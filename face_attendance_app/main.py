@@ -9,11 +9,13 @@ from tkinter import font
 import imutils
 import math
 from PIL import Image, ImageTk
+from datetime import datetime
 
 ############################################### PAHTS ###########################################################
 users_folder = r'.\Database\Users'
 faces_folder = r'.\Database\Faces'
 images_folder = r'.\Images'
+reg_folder = r'.\Database\Registrations'
 
 ############################################# VARIABLES #########################################################
 show_det = False #Show face mesh image
@@ -27,6 +29,12 @@ pady = 80
 recog_thres = 0.5 #Recognition Threshold
 
 ############################################### FUNCTIONS #######################################################
+def get_day_and_hour():
+    current_time = datetime.now()
+    day = current_time.strftime("%A")  # Día de la semana
+    time = current_time.strftime("%H:%M:%S")  # Hora en formato HH:MM:SS
+    return day, time
+
 def close_window_2():
     global step, blink_count
     step = 1
@@ -64,13 +72,17 @@ def Profile(username):
     # Check
     if User in users:
         # Interface
-        text1 = tk.Label(screen_4, text=f"WELCOME {Name.upper()}")
+        text1 = tk.Label(screen_4, text=f"Name: {Name}")
         text1.config(font='Helvetica 18 bold')
-        text1.place(x=530, y=120)
+        text1.place(x=340, y=560)
+
+        text2 = tk.Label(screen_4, text=f"Username: {User}")
+        text2.config(font='Helvetica 18 bold')
+        text2.place(x=320, y=595)
         
         # Label
         lblImgUser = tk.Label(screen_4)
-        lblImgUser.place(x=470, y=150)
+        lblImgUser.place(x=250, y=150)
 
         # User Image
         PosUserImg = users.index(User)
@@ -86,6 +98,11 @@ def Profile(username):
 
         lblImgUser.configure(image=IMG)
         lblImgUser.image = IMG
+
+        #Create or add registraion date file
+        day, time = get_day_and_hour()
+        with open(f'{os.path.join(reg_folder, Name)}.txt', 'a+') as f:
+            f.write(f'Name: {Name} - User: {User} - Datetime: {day} - {time}\n')
     
     screen_4.protocol("WM_DELETE_WINDOW", close_window_4)
 
@@ -485,7 +502,7 @@ background = tk.Label(image = back_image, text='Start')
 background.place(x=0, y=0, relheight=1, relwidth=1)
 
 #Set LogIn Background
-back_image_4 = tk.PhotoImage(file=os.path.join(images_folder, 'background_2.png'))
+back_image_4 = tk.PhotoImage(file=os.path.join(images_folder, 'background_3.png'))
 
 #Set register inputs (name, username, password)
 name_reg_box = tk.Entry(screen, width=20,font=font.Font(family="Times", size=20))
