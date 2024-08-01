@@ -12,13 +12,14 @@ from PIL import Image, ImageTk
 from datetime import datetime
 
 ############################################### PAHTS ###########################################################
+database_folder = r'.\Database'
 users_folder = r'.\Database\Users'
 faces_folder = r'.\Database\Faces'
 images_folder = r'.\Images'
 reg_folder = r'.\Database\Registrations'
 
-if not os.path.exists(r'.\Database'):
-    os.mkdir(r'.\Database')
+if not os.path.exists(database_folder):
+    os.mkdir(database_folder)
 
 if not os.path.exists(users_folder):
     os.mkdir(users_folder)
@@ -230,7 +231,7 @@ def Biometric_Log():
 
                                                 if blink_count >= 2:
                                                     #Take a picture when eyes are opened
-                                                    if distance_right_eye_points > 12 and distance_left_eye_points > 12:
+                                                    if distance_right_eye_points > 15 and distance_left_eye_points > 15:
                                                         face_cut = frame_rgb[bbox_y1:bbox_y1+bbox_h, bbox_x1:bbox_x1+bbox_w]
                                                         cv2.imwrite(os.path.join(faces_folder, f'{user_reg}.png'), cv2.cvtColor(face_cut, cv2.COLOR_RGB2BGR))
                                                         step = 2
