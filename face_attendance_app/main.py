@@ -44,8 +44,8 @@ recog_thres = 0.5 #Recognition Threshold
 ############################################### FUNCTIONS #######################################################
 def get_day_and_hour():
     current_time = datetime.now()
-    day = current_time.strftime("%A")  # Día de la semana
-    time = current_time.strftime("%H:%M:%S")  # Hora en formato HH:MM:SS
+    day = current_time.strftime("%A")
+    time = current_time.strftime("%d/%m/%Y %H:%M:%S")
     return day, time
 
 def close_window_2():
@@ -114,7 +114,8 @@ def Profile(username):
 
         #Create or add registraion date file
         day, time = get_day_and_hour()
-        with open(f'{os.path.join(reg_folder, Name)}.txt', 'a+') as f:
+        filename = Name + '_' + User + r'.txt'
+        with open(f'{os.path.join(reg_folder, filename)}', 'a+') as f:
             f.write(f'Name: {Name} - User: {User} - Datetime: {day} - {time}\n')
     
     screen_4.protocol("WM_DELETE_WINDOW", close_window_4)
