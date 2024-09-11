@@ -24,7 +24,6 @@ Feel free to explore, clone, and contribute to any of the projects. Let's push t
 * [![Pytorch][Pytorch]][Pytorch-url]
 * [![Scikit-learn][Scikit-learn]][Scikit-learn-url]
 * [![Ultralytics][Ultralytics]][Ultralytics-url]
-* [![MediaPipe][MediaPipe]][MediaPipe-url]
 * [![Tkinter][Tkinter]][Tkinter-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
