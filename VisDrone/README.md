@@ -1,4 +1,4 @@
-Repositorio con proyectos de Visión por Computadora empleando el dataset VisDrone: https://github.com/VisDrone/VisDrone-Dataset
+Repository with Computer Vision projects using the VisDrone dataset: https://github.com/VisDrone/VisDrone-Dataset
 
 The challenge mainly focuses on four tasks:
 
