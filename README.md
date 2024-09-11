@@ -33,6 +33,48 @@ Feel free to explore, clone, and contribute to any of the projects. Let's push t
 
 Each folder in this repository contains its own README with detailed instructions on how to clone, run, and understand the project.
 
+## Projects
+
+<table><thead>
+  <tr>
+    <th>Project Name</th>
+    <th>Description</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Drone Segmentation</td>
+    <td>Aereal Drone Image Segmentation through U-net architecture</td>
+  </tr>
+  <tr>
+    <td>Face Attendance App</td>
+    <td>Face Attendance App using Mediapipe and Face Recognition</td>
+  </tr>
+  <tr>
+    <td>Mediapipe Labyrinth</td>
+    <td>An AI hand-controlled labyrinth game</td>
+  </tr>
+  <tr>
+    <td>Road Lane Detector</td>
+    <td>Road Lane Detector for Autonomous Vehicles</td>
+  </tr>
+  <tr>
+    <td>Rock - Paper - Scissor</td>
+    <td>Rock, Paper and Scissor detection using a webcam and Support Vector Machine (SVM) algorithm</td>
+  </tr>
+  <tr>
+    <td>Surveillance Camera System</td>
+    <td>Surveillance camera system that detects people and send an email to advise you</td>
+  </tr>
+  <tr>
+    <td>Vehicle Speed Estimation</td>
+    <td>Vehicle speed estimation using a highway camera, Ultralytics-YOLOv8 and image processing techniques</td>
+  </tr>
+  <tr>
+    <td>VisDrone</td>
+    <td>Computer Vision using the VisDrone dataset: Detection and tracking in images and videos</td>
+  </tr>
+</tbody></table>
+
 <!-- CONTACT -->
 ## Contact
 Any comment or contribution is welcome and I will be attentive to respond to you :)
