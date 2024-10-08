@@ -87,7 +87,7 @@ if __name__ == "__main__":
         os.makedirs(r'.\models')
 
     if not os.path.exists(r'.\outputs'):
-        os.makedirs(r'.\models')
+        os.makedirs(r'.\outputs')
 
     model_path = r'models/yolov8m.pt'
     system = Security_system(model_path)
