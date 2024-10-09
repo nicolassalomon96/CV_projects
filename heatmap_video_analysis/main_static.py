@@ -90,9 +90,11 @@ if __name__ == '__main__':
         os.makedirs(r'.\outputs')
 
     #video_path = r'.\videos\people_loop.mp4'
-    #video_path = r'.\videos\CCTV.mp4'
-    video_path = r'.\videos\Mall.mp4'
-    model_path = r'models\yolov8m.pt'
+    video_path = r'.\videos\CCTV.mp4'
+    #video_path = r'.\videos\Mall.mp4'
+    #video_path = r'.\videos\road.mp4'
+    #model_path = r'models\yolov8m.pt'
+    model_path = r'models\yolov10m.pt'
     
     #Video capture and information
     cap = cv2.VideoCapture(video_path)
@@ -130,7 +132,7 @@ if __name__ == '__main__':
         heatmap_frame = heatmap.process_bbox(xyxy) #Considers full bbox as object position
 
         #Show detections        
-        #cv2.imshow('Processed_frame', centers_drawn)
+        cv2.imshow('Processed_frame', centers_drawn)
 
         # Press 'q' to exit the loop
         if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -141,7 +143,7 @@ if __name__ == '__main__':
     cap.set(cv2.CAP_PROP_POS_FRAMES, total_frames - 1)
     _, last_frame = cap.read()
 
-    heatmap.show_and_save(last_frame, name='heatmap_mall')
+    heatmap.show_and_save(last_frame, name='heatmap_CCTV_static')
 
     cap.release()
     cv2.destroyAllWindows()
