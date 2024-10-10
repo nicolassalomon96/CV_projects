@@ -1,23 +1,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app">
-    <img src="images/Readme/logo.png" alt="Logo" width="100" height="100">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis">
+    <img src="images/logo.png" alt="Logo" width="100" height="100">
   </a>
 
-<h3 align="center">Face Attendance App using Mediapipe and Face Recognition</h3>
+<h3 align="center">Heatmap Video Analysis through Object Detection</h3>
 
   <p align="center">
-    Useful Face Attendance App using Mediapipe to extract facial mesh and identify each user. It allows you to create a user with a name, username, and password, and records each registration with the name and datetime.
+    Useful Heatmap Video Analysis to extract areas where objects stay most of the time. It allows you to measure statics objects and in movement as well.
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app/images/Readme/output_test.png">View Demo</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis/images/Readme/outputs.png">View Demo</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -51,28 +51,27 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-* Project Summary and Importance
+* Project Summary
 
-This project utilizes Mediapipe to capture the facial mesh of a person through a webcam and generate a unique user and password for each individual in a registration application. This innovative computer vision solution offers numerous applications and advantages across various fields.
+In this project, a video object detection system was developed using the YOLO (You Only Look Once) model for real-time recognition. The system identifies objects in video sequences and then tracks their movement over time. To analyze the behavior of the detected objects, a heat map is generated that highlights the areas with the highest activity, visualizing the frequency and trajectory of the movement.
 
 * Applications
 
-1. Attendance Control: Perfect for schools, universities, and offices where automatic attendance recording can save time and increase accuracy.
-2. Secure Access: Ideal for access control systems in buildings and events, providing a secure and contactless way to verify identity.
-3. Client Monitoring: In gyms and wellness centers, it enables efficient tracking of facility usage and client preferences.
-4. Hospitality: In hotels and restaurants, it facilitates quick and efficient guest registration and management.
+1. Surveillance and security: Detection of intruders or anomalous behavior by identifying suspicious movement patterns.
+2. Traffic analysis: Monitoring vehicles and pedestrians at intersections or roads, identifying congested areas and optimizing traffic management.
+3. Sports and performance analysis: In sports such as football or basketball, the system can analyse players' movements during a match, highlighting the areas where they spend the most time.
+4. Retail and marketing: Analysis of customer behavior in physical stores, observing their routes, identifying areas of greatest interest or less visited areas to optimize product layout.
 
 * Advantages
 
-1. Accuracy and Efficiency: Mediapipe technology ensures high precision in facial recognition, minimizing errors and saving time.
-2. Ease of Use: With a user-friendly interface and the ability to use a standard webcam, the application is accessible to any user.
-3. Enhanced Security: By generating unique users and passwords based on facial features, system security is enhanced, reducing the risk of identity fraud.
-4. Versatility: Applicable in multiple industries and scenarios, from education and healthcare to security and entertainment.
-5. Automation: Reduces the need for manual intervention, freeing up human resources for more critical tasks and improving operational efficiency.
+1. Real-time detection: Thanks to YOLO, the system offers real-time detection and analysis, making it ideal for dynamic applications where speed is crucial.
+2. Intuitive visual analysis: Heat maps provide a clear and easy-to-interpret representation of the areas of greatest activity, allowing for fast, data-driven decisions.
+3. Scalability: This system can be applied to both small environments (such as a store or sports court) and large areas (cities, stadiums, etc.), adjusting to the user's needs.
+4. Versatility in different domains: It can be adapted to different industries and use cases, from human behavior analysis to machine or vehicle monitoring.
 
 * Conclusions
 
-In summary, this project represents a significant advancement in the integration of computer vision technologies for practical, everyday applications, providing innovative and effective solutions for person registration and management.
+This project combines fast object detection with YOLO and visual analysis of heat maps to track and visualize movement patterns in real time. Its application in various industries improves automated decision making and optimizes processes through a clear and efficient interpretation of data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,9 +80,8 @@ In summary, this project represents a significant advancement in the integration
 
 * [![Python][Python]][Python-url]
 * [![OpenCV][OpenCV]][OpenCV-url]
-* [![NumPy][NumPy]][NumPy-url]
-* [![MediaPipe][MediaPipe]][MediaPipe-url]
-* [![Tkinter][Tkinter]][Tkinter-url]
+* [![Pytorch][Pytorch]][Pytorch-url]
+* [![Ultralytics][Ultralytics]][Ultralytics-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,23 +95,26 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Install the packages listed on requirements.txt:
-  ```sh
-  pip install -r requirements.txt
-  ```
+The following packages may be installed in order to run the code:
 
-If you have problems with face_recognition package, please try:
+* OpenCV
   ```sh
-  conda install -c conda-forge dlib
-  pip install cmake
-  pip install face_recognition
+  pip install opencv-python
+  ```
+* Ultralytics (for YOLO)
+  ```sh
+  pip install ultralytics
+  ```
+* Pytorch: according to your computer, see https://pytorch.org/get-started/locally/
+  ```sh
+  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 #for example
   ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app
+   git clone https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis
    ```
 2. Install required packages listed on Prerequisites
 
@@ -123,27 +124,27 @@ If you have problems with face_recognition package, please try:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-In order to probe or use this project you must run main.py script:
+In order to probe or use this project you can run:
+
+* main_static.py script, in order to analyze the video considering static objects as well:
 ```sh
-  python main.py
+  python main_static.py
 ```
 
-First of all you need to create or register an user:
+* main_dynamic.py script, in order to analyze the video considering only moving objects:
+```sh
+  python main_dynamic.py
+```
 
-* Write your desire name, username and password.
-* Click the register button and wait for the Biometric Registration Window.
-* Stay looking at the camera and blink twice. If you take your view off the camera, the blink count will reset for security.
-* Wait for the success confirmation window.
+Considerations:
 
-In order to Log In:
+* In the main function you should specify the complete path to the video you want to analyze
+* When the detector object is created you must specify what object you want to detect and track
 
-* Click on the Log In button and wait for the Biometric Login Window.
-* Stay looking at the camera and blink twice. If you take your view off the camera, the blink count will reset for security.
-* If the face was recognized, a Profile Window will display the user's photo, name and username.
 
 <div align="center">
-  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app/images/Readme/output_test.png">
-    <img src="images/Readme/output_test.png" alt="Logo" width="1286" height="350">
+  <a href="https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis/images/outputs.png">
+    <img src="images/outputs.png" alt="Logo" width="1286" height="700">
   </a>
 </div>
 
@@ -200,7 +201,7 @@ Any comment or contribution is welcome and I will be attentive to respond to you
 
 Nicolás Salomón - [Linkedin](https://www.linkedin.com/in/nicolassalomon96/) - [Gmail](nicolassalomon96@gmail.com)
 
-Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app](https://github.com/nicolassalomon96/CV_projects/tree/main/face_attendance_app)
+Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis](https://github.com/nicolassalomon96/CV_projects/tree/main/heatmap_video_analysis)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -208,14 +209,12 @@ Project Link: [https://github.com/nicolassalomon96/CV_projects/tree/main/face_at
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: images/Readme/output_test_1.png
+[product-screenshot]: images/heatmap_example.png
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
 [OpenCV]: https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white
 [OpenCV-url]: https://opencv.org/
-[NumPy]: https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white
-[NumPy-url]: https://numpy.org/
-[MediaPipe]: images/Readme/mediapipe_logo.png
-[MediaPipe-url]: https://mediapipe-studio.webapps.google.com/home
-[Tkinter]: https://img.shields.io/badge/Made_with-tkinter-blue?style=for-the-badge
-[Tkinter-url]: https://docs.python.org/es/3/library/tkinter.html
+[Pytorch]: https://img.shields.io/badge/PyTorch-black?logo=PyTorch
+[Pytorch-url]: https://pytorch.org/
+[Ultralytics]: https://img.shields.io/badge/ultralytics-v8.1.0-blue
+[Ultralytics-url]: https://docs.ultralytics.com/
