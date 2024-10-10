@@ -46,6 +46,10 @@ Each folder in this repository contains its own README with detailed instruction
     <td>Aereal Drone Image Segmentation through U-net architecture</td>
   </tr>
   <tr>
+    <td>Heatmap Video Analysis</td>
+    <td>Heatmap Video Analysis through Object Detection</td>
+  </tr>
+  <tr>
     <td>Face Attendance App</td>
     <td>Face Attendance App using Mediapipe and Face Recognition</td>
   </tr>
